@@ -333,6 +333,7 @@ export const ProfessionalCareerParams: CareerParams = {
 				Technologies.Quasar,
 				Technologies.VueJs,
 				Technologies.Nuxt,
+				Technologies.ReactJs,
 				Technologies.Sass,
 				Technologies.Tailwind,
 				Technologies.Redis,
