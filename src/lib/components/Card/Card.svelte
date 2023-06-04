@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { changeColorOpacity } from '@riadh-adrani/utility-js';
 	import { onMount } from 'svelte';
+	import type { MouseEventHandler } from 'svelte/elements/index';
 
 	let el: HTMLElement;
 
@@ -23,8 +24,9 @@
 		}
 	}
 
-	const onHover = (ev: MouseEvent) => {
-		const target = ev.currentTarget as HTMLElement;
+	const onHover: MouseEventHandler<HTMLDivElement> = (ev) => {
+		const target = ev.currentTarget;
+
 		const rect = target.getBoundingClientRect();
 
 		const x = ev.clientX - rect.left;
@@ -61,6 +63,7 @@
 	bind:this={el}
 	on:mousemove={onHover}
 	class={['card', ...classes].join(' ')}
+	style:bgColor={'red'}
 >
 	<div class="flex-1 flex flex-col card-bg-img">
 		<slot />
@@ -83,17 +86,12 @@
 
 		display: inline-flex;
 		flex-direction: column;
-		border: 1px solid var(--accent-c);
+		border: 1px solid var(--border);
 		border-radius: 15px;
 		transition-duration: 200ms;
 		position: relative;
-		background: linear-gradient(
-				90deg,
-				var(--primary-c) 0%,
-				var(--primary-c) 60%,
-				rgba(0, 0, 0, 0.6) 100%
-			),
-			no-repeat right 45% / 45% var(--bg-img);
+		background: linear-gradient(90deg, var(--main) 0%, var(--main) 60%, var(--main-60) 100%),
+			no-repeat right 40% / 40% var(--bg-img);
 
 		&-bg-img {
 			padding: 25px;
@@ -111,7 +109,7 @@
 
 		&:hover {
 			transform: perspective(1000px) rotateX(var(--rot-x)) rotateY(var(--rot-y)) scale(1.01);
-			border-color: var(--border-color);
+			border-color: var(--border-hover);
 		}
 	}
 </style>

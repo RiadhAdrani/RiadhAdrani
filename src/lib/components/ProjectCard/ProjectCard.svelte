@@ -8,6 +8,7 @@
 	import CardDivider from '../Card/CardDivider.svelte';
 	import ChipIcon from '../Chip/ChipIcon.svelte';
 	import CardLogo from '../Card/CardLogo.svelte';
+	import { theme } from '$lib/stores/theme';
 
 	export let project: Project;
 	$: months = countMonths(project.period.from, project.period.to);
@@ -19,34 +20,32 @@
 </script>
 
 <Card color={project.color}>
-	<div class="flex flex-col flex-1">
-		<CardLogo alt={project.name} src={project.logo} size={40} radius={'0'} />
-		<div class="project-card-top">
-			<CardTitle title={project.name} />
-			<div class="project-card-links">
-				{#each project.links as link}
-					<CardLink label={link.label ?? ''} to={link.to} />
-				{/each}
-			</div>
-		</div>
-		<CardDivider />
-		<div class="project-card-mid">
-			<p class="project-card-type">{project.type}</p>
-			<p class="project-card-period">{period}</p>
-		</div>
-		<p class="project-card-description">{project.description}</p>
-		<div class="project-card-bottom">
-			<Chip label={from} />
-			{#if from !== to}
-				<Chip label={to} />
-			{/if}
-		</div>
-		<CardDivider />
-		<div class="project-card-technologies">
-			{#each project.technologies as tech}
-				<ChipIcon logo={tech.logo} name={tech.name} inverted={tech.inverted} />
+	<CardLogo alt={project.name} src={project.logo} size={40} radius={'0'} />
+	<div class="project-card-top">
+		<CardTitle title={project.name} />
+		<div class="project-card-links">
+			{#each project.links as link}
+				<CardLink label={link.label ?? ''} to={link.to} />
 			{/each}
 		</div>
+	</div>
+	<CardDivider />
+	<div class="project-card-mid">
+		<p class="project-card-type">{project.type}</p>
+		<p class="project-card-period">{period}</p>
+	</div>
+	<p class="project-card-description">{project.description}</p>
+	<div class="project-card-bottom">
+		<Chip label={from} />
+		{#if from !== to}
+			<Chip label={to} />
+		{/if}
+	</div>
+	<CardDivider />
+	<div class="project-card-technologies">
+		{#each project.technologies as tech}
+			<ChipIcon logo={tech.logo} name={tech.name} inverted={$theme && tech.inverted} />
+		{/each}
 	</div>
 </Card>
 
@@ -72,10 +71,10 @@
 		&-mid {
 			display: flex;
 			justify-content: space-between;
-			color: var(--accent-text-c);
+			color: var(--secondary-text);
 			font-size: 0.9em;
 			font-style: italic;
-			font-weight: 400;
+			font-weight: 300;
 		}
 
 		&-bottom {
@@ -91,8 +90,9 @@
 
 		&-description {
 			line-height: 1.4em;
+			font-size: 0.9em;
 			flex: 1;
-			color: var(--accent-text-c);
+			color: var(--accent-text);
 		}
 	}
 </style>

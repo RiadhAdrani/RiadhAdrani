@@ -7,20 +7,20 @@ import type {
 	ResumePageParams
 } from './utils';
 
-export const PortfolioTitle = 'Slick template with Svelte';
+export const PortfolioTitle = 'Riadh Adrani';
 
 export const NavBar: NavBarParams = {
 	home: 'Home',
 	personal: 'Projects',
-	career: 'Experience',
+	career: 'Experiences',
 	resume: 'Resume',
-	skills: 'My Skills'
+	skills: 'Skills'
 };
 
 export const Home: HomeParams = {
 	title: 'Home Page',
 	name: 'Riadh',
-	lastName: 'ADRANI',
+	lastName: 'Adrani',
 	description: 'A self-made developer based in Tunisia.',
 	links: {
 		github: 'https://github.com/RiadhAdrani',
@@ -66,7 +66,7 @@ export const PersonalProjects: PersonalProjectsParams = {
 		{
 			color: '#fbb03b',
 			name: 'Werewolves',
-			logo: Assets.Werewolves1,
+			logo: Assets.Unknown,
 			description:
 				'An app to manage your game of Loup garous de thiercelieu also known as The Werewolves of Millers Hollow.',
 			period: { from: new Date(2022, 6, 23) },
@@ -179,7 +179,7 @@ export const PersonalProjects: PersonalProjectsParams = {
 		{
 			name: 'WeTube',
 			type: 'Web App',
-			logo: Assets.WeTube,
+			logo: Assets.Unknown,
 			color: '#00b0fa',
 			period: { from: new Date(2022, 6, 1), to: new Date(2022, 6, 10) },
 			links: [
@@ -199,7 +199,7 @@ export const PersonalProjects: PersonalProjectsParams = {
 		{
 			name: 'Audiphy',
 			type: 'Desktop App',
-			logo: Assets.Audiphy,
+			logo: Assets.Unknown,
 			color: '#3083f6',
 			period: { from: new Date(2022, 5, 1), to: new Date(2022, 6, 10) },
 			links: [{ label: 'GitHub', to: 'https://github.com/RiadhAdrani/audiphy' }],
@@ -215,7 +215,7 @@ export const PersonalProjects: PersonalProjectsParams = {
 		{
 			name: 'Wroddit',
 			type: 'Web App',
-			logo: Assets.Wroddit,
+			logo: Assets.Unknown,
 			color: '#E9ECEF',
 			period: { from: new Date(2022, 4, 1), to: new Date(2022, 4, 10) },
 			links: [{ label: 'GitHub', to: 'https://github.com/RiadhAdrani/wroddit' }],
@@ -230,7 +230,7 @@ export const PersonalProjects: PersonalProjectsParams = {
 		{
 			name: 'Dwidder',
 			type: 'Web App',
-			logo: Assets.Dwidder,
+			logo: Assets.Unknown,
 			color: '#1e9eae',
 			period: { from: new Date(2022, 2, 1), to: new Date(2022, 3, 10) },
 			links: [{ label: 'GitHub', to: 'https://github.com/RiadhAdrani/dwidde' }],
@@ -246,7 +246,7 @@ export const PersonalProjects: PersonalProjectsParams = {
 		{
 			name: 'Question Submission',
 			type: 'Web App',
-			logo: Assets.QuestionSubmission,
+			logo: Assets.Unknown,
 			color: '#ffde16',
 			period: { from: new Date(2021, 6, 1), to: new Date(2021, 7, 10) },
 			links: [
@@ -264,7 +264,7 @@ export const PersonalProjects: PersonalProjectsParams = {
 		{
 			name: 'Azur City',
 			type: 'Android App',
-			logo: Assets.Azur,
+			logo: Assets.Unknown,
 			color: '#01acc8',
 			period: { from: new Date(2021, 1, 1), to: new Date(2021, 4, 10) },
 			links: [{ label: 'GitHub', to: 'https://github.com/RiadhAdrani/azur_app' }],
@@ -275,7 +275,7 @@ export const PersonalProjects: PersonalProjectsParams = {
 		{
 			name: 'Werewolves',
 			type: 'Android App',
-			logo: Assets.Werewolves1,
+			logo: Assets.Unknown,
 			color: '#fbb03b',
 			period: { from: new Date(2021, 0, 1), to: new Date(2021, 5, 10) },
 			links: [
@@ -288,7 +288,7 @@ export const PersonalProjects: PersonalProjectsParams = {
 		{
 			name: 'Color Noter',
 			type: 'Cross platform App',
-			logo: Assets.ColorNoter,
+			logo: Assets.Unknown,
 			color: '#8cacb9',
 			period: { from: new Date(2020, 8, 1), to: new Date(2020, 9, 10) },
 			links: [
@@ -437,4 +437,8 @@ export const MySkillsParams: SkillsParams = {
 export const ResumeParams: ResumePageParams = {
 	title: 'Resumé',
 	cv: ''
+};
+
+export const SearchPageParams = {
+	title: 'Search'
 };

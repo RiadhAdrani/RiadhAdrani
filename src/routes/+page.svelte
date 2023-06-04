@@ -4,6 +4,7 @@
 	import { Home, PortfolioTitle } from '$lib/params';
 	import type { SocialLink, SocialMedia } from '$lib/utils';
 	import { useSocialMedia, useTitle } from '$lib/utils';
+	import { isBlank } from '@riadh-adrani/utility-js';
 
 	const { description, lastName, links: _links, name, skills, title } = Home;
 
@@ -17,6 +18,13 @@
 			icon: data.icon
 		};
 	});
+
+	const isEmail = (email: string): boolean => {
+		const reg =
+			/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+		return !isBlank(email) && reg.test(email);
+	};
 </script>
 
 <svelte:head>
@@ -24,12 +32,17 @@
 </svelte:head>
 <div class="home">
 	<div class="home-section">
-		<h1 class="home-title">{name} {lastName.toUpperCase()},</h1>
+		<h1 class="home-title">{name} {lastName},</h1>
 		<p class="home-subtitle">{description}</p>
 		<div class="home-social">
 			{#each links as link}
-				<a class="home-social-item" href={link.to} target="_blank" rel="noreferrer">
-					<Icon icon={link.icon} />
+				<a
+					class="home-social-item"
+					href={`${isEmail(link.to) ? 'mailto:' : ''}${link.to}`}
+					target="_blank"
+					rel="noreferrer"
+				>
+					<Icon icon={link.icon} color={'var(--accent-text)'} />
 				</a>
 			{/each}
 		</div>
@@ -55,7 +68,8 @@
 		}
 
 		&-subtitle {
-			font-size: 1.5em;
+			color: var(--tertiary-text);
+			font-size: 1.35em;
 			font-weight: 200;
 		}
 
@@ -63,6 +77,7 @@
 			display: flex;
 			flex-direction: column;
 			flex: 1;
+			gap: 10px;
 		}
 
 		&-social {

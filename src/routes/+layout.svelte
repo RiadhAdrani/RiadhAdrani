@@ -1,12 +1,15 @@
 <script lang="ts">
 	import NavMenu from '$lib/components/NavMenu/NavMenu.svelte';
 	import '$lib/index.scss';
+	import { theme } from '$lib/stores/theme';
 
 	export const prerender = true;
 </script>
 
-<NavMenu />
-<div class="content container"><slot /></div>
+<div class={`body contents ${$theme ? 'theme-dark' : 'theme-light'}`}>
+	<NavMenu />
+	<div class="content container"><slot /></div>
+</div>
 
 <style lang="scss">
 	.content {
@@ -14,28 +17,6 @@
 		flex-direction: column;
 		flex: 1;
 		padding: 40px 0px;
-	}
-
-	.container {
-		max-width: 1200px;
-		min-width: 1200px;
-		margin: 0px auto;
-
-		@media (max-width: 1350px) {
-			& {
-				max-width: 1000px;
-				min-width: 1000px;
-			}
-		}
-
-		@media (max-width: 1075px) {
-			& {
-				max-width: -webkit-fill-available;
-				min-width: -webkit-fill-available;
-				max-width: -moz-available;
-				min-width: -moz-available;
-			}
-		}
 	}
 
 	@media (max-width: 950px) {
@@ -52,13 +33,14 @@
 		}
 	}
 
-	:global(body) {
+	.body {
 		margin: 0px;
-		background-color: var(--primary-c);
-		color: var(--primary-text-c);
+		background-color: var(--main);
+		color: var(--main-text);
 		font-family: var(--text-f);
 		display: flex;
 		flex-direction: column;
+		transition-duration: 200ms;
 
 		letter-spacing: 1px;
 
