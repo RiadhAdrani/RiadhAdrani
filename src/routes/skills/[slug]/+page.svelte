@@ -10,7 +10,7 @@
 	import type { Skill } from '$lib/types';
 	import { getAssetURL } from '$lib/data/assets';
 	import { SKILLS, TITLE_SUFFIX } from '$lib/params';
-	import { isBlank } from '@riadh-adrani/utility-js';
+	import { isBlank } from '@riadh-adrani/utils';
 
 	type Related = { name: string; img: string; type: 'projects' | 'experience' };
 
