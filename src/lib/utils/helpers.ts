@@ -1,5 +1,4 @@
 import { Icons } from '.';
-import type { SocialMedia } from './types';
 
 export const countMonths = (from: Date, to: Date = new Date()): number => {
 	let firstYear = 0;
@@ -40,7 +39,7 @@ export const useImage = (url: string, base: string): string => `${base}${url}`;
 
 export const useTitle = (title: string, suffix: string) => `${title} | ${suffix}`;
 
-export const useSocialMedia = (media: SocialMedia) => {
+export const useSocialMedia = (media: any) => {
 	switch (media) {
 		case 'github':
 			return { title: 'GitHub', icon: Icons.GitHub };
