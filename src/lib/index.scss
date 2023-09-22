@@ -51,6 +51,10 @@
 	overflow-y: scroll;
 }
 
+body {
+	margin: 0px;
+}
+
 * {
 	transition-duration: 200ms;
 	transition-property: background, border-color, opacity, box-shadow, top, bottom, left, margin,
@@ -155,7 +159,7 @@
 	--code-interpolation: var(--code-keyword);
 	--code-class-name: var(--secondary-text);
 
-	color: var(--secondary-text);
+	color: var(--tertiary-text);
 	overflow-y: auto !important;
 
 	code[class*='language-'],
