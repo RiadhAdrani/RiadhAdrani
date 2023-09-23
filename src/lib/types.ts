@@ -23,7 +23,9 @@ export interface Item {
 	slug: string;
 	name: string;
 	logo: Asset;
+	shortDescription: string;
 	description: string;
+	screenshots?: Array<{ src: string; label: string }>;
 }
 
 export interface Link {
@@ -36,7 +38,7 @@ export interface IconLink extends Link {
 	icon: Asset;
 }
 
-export interface Skill extends Item {
+export interface Skill extends Omit<Item, 'shortDescription'> {
 	color: string;
 }
 
