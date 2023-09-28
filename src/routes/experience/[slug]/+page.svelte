@@ -35,7 +35,7 @@
 					<div class="text-0.9em">
 						<MainTitle>{data.experience.name}</MainTitle>
 					</div>
-					<p class="font-300 text-[var(--tertiary-text)] m-y-2">
+					<p class="font-300 text-[var(--tertiary-text)] m-y-2 text-center">
 						{data.experience.company} · {data.experience.location} · {data.experience.type}
 					</p>
 					<div class="w-75%">
@@ -72,7 +72,16 @@
 			</Banner>
 			<div class="pt-3 pb-1 overflow-x-hidden w-full">
 				<div class="px-10px m-y-5">
-					<Markdown content={data.experience.description ?? 'This place is yet to be filled...'} />
+					{#if data.experience.description}
+						<Markdown
+							content={data.experience.description ?? 'This place is yet to be filled...'}
+						/>
+					{:else}
+						<div class="p-5 col-center gap-3 m-y-auto text-[var(--border)]">
+							<UIcon icon="i-carbon-text-font" classes="text-3.5em" />
+							<p class="font-300">No description...</p>
+						</div>
+					{/if}
 				</div>
 			</div>
 		</div>
