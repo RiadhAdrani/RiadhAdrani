@@ -4,6 +4,20 @@ import type { Project } from './types';
 
 const MY_PROJECTS: Array<Project> = [
 	{
+		slug: 'annotator',
+		color: '#c82829',
+		description: 'A basic annotation tools for documents.',
+		shortDescription: 'A basic annotation tools for documents',
+		links: [{ to: 'https://github.com/RiadhAdrani/annotator', label: 'GitHub' }],
+		logo: Assets.Unknown,
+		name: 'Annotator',
+		period: {
+			from: new Date(2023, 10, 3)
+		},
+		skills: getSkills('ts', 'reactjs', 'node', 'rust', 'vite', 'unocss', 'docker'),
+		type: 'Desktop App'
+	},
+	{
 		slug: 'docuniser',
 		color: '#747bff',
 		description:
@@ -14,7 +28,8 @@ const MY_PROJECTS: Array<Project> = [
 		logo: Assets.Unknown,
 		name: 'Docuniser',
 		period: {
-			from: new Date(2023, 8, 23)
+			from: new Date(2023, 8, 23),
+			to: new Date(2023, 10, 0)
 		},
 		skills: getSkills('ts', 'reactjs', 'node', 'vite', 'electron', 'unocss', 'docker'),
 		type: 'Desktop App'
@@ -40,7 +55,7 @@ const MY_PROJECTS: Array<Project> = [
 		description: 'PostCSS plugin that ignore a file with a comment.',
 		shortDescription: 'PostCSS plugin that ignore a file with a comment.',
 		links: [{ to: 'https://github.com/RiadhAdrani/postcss-plugin-ignore-file', label: 'GitHub' }],
-		logo: 'https://postcss.org/assets/postcss-83d93145.svg',
+		logo: Assets.Postcss,
 		name: 'Ignore file plugin',
 		period: {
 			from: new Date(2023, 7, 16),

@@ -44,6 +44,7 @@ const MY_SKILLS = [
 	s({ slug: 'dart', color: 'cyan', description: dart_md, logo: Assets.Dart, name: 'Dart' }),
 	s({ slug: 'kotlin', color: 'purple', description: kt_md, logo: Assets.Kotlin, name: 'Kotlin' }),
 	s({ slug: 'go', color: 'cyan', description: go_md, logo: Assets.Go, name: 'Go' }),
+	s({ slug: 'rust', color: 'orange', description: '', logo: Assets.Rust, name: 'Rust' }),
 	s({
 		slug: 'java',
 		color: 'red',
@@ -228,7 +229,7 @@ const MY_SKILLS = [
 		slug: 'postcss',
 		color: 'red',
 		description: '',
-		logo: 'https://postcss.org/assets/postcss-83d93145.svg',
+		logo: Assets.Postcss,
 		name: 'PostCSS'
 	}),
 	s({
