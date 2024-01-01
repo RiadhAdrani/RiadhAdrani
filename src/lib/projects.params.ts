@@ -14,7 +14,17 @@ const MY_PROJECTS: Array<Project> = [
 		period: {
 			from: new Date(2023, 10, 3)
 		},
-		skills: getSkills('ts', 'reactjs', 'node', 'rust', 'vite', 'unocss', 'docker'),
+		skills: getSkills(
+			'ts',
+			'reactjs',
+			'node',
+			'rust',
+			'mongodb',
+			'redis',
+			'vite',
+			'unocss',
+			'docker'
+		),
 		type: 'Desktop App'
 	},
 	{

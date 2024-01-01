@@ -14,7 +14,7 @@ const MY_EXPERIENCES: Array<Experience> = [
 		location: 'Remote, Tunisia',
 		color: 'white',
 		links: [],
-		logo: 'https://media.licdn.com/dms/image/C4E0BAQGicVBZs7JvxA/company-logo_200_200/0/1659007461405?e=1703721600&v=beta&t=cFU1O59YXmMMVQ0d87pvr_iuEd1aKXPFUj9ufqsrvaU',
+		logo: Assets.HSTECH,
 		period: { from: new Date(2022, 9, 3) },
 		skills: getSkills(
 			'deno',
@@ -39,7 +39,7 @@ const MY_EXPERIENCES: Array<Experience> = [
 		)
 	},
 	{
-		slug: 'software-freelancer',
+		slug: 'software-dev@freelancer',
 		name: 'Software Development Freelancer',
 		company: 'Self-employed',
 		description:
@@ -53,7 +53,18 @@ const MY_EXPERIENCES: Array<Experience> = [
 		logo: Assets.Unknown,
 		location: 'Tunisia',
 		period: { from: new Date(2021, 10, 1), to: new Date(2022, 5, 16) },
-		skills: getSkills('js', 'node', 'reactjs', 'kotlin', 'firebase', 'xamarin', 'csharp')
+		skills: getSkills(
+			'js',
+			'ts',
+			'node',
+			'reactjs',
+			'kotlin',
+			'firebase',
+			'xamarin',
+			'csharp',
+			'fastify',
+			'mongodb'
+		)
 	},
 	{
 		slug: 'web-designer@triweb',
@@ -69,11 +80,11 @@ const MY_EXPERIENCES: Array<Experience> = [
 		period: { from: new Date(2021, 4, 1), to: new Date(2021, 11, 12) },
 		color: 'white',
 		links: [],
-		logo: 'https://media.licdn.com/dms/image/C4D0BAQHYx-fVji8mCg/company-logo_200_200/0/1563535271394?e=1703721600&v=beta&t=f-lxjEb898PBEE2zME3llSns3uqUovZlY-O_fVqCgyY',
+		logo: Assets.Triweb,
 		skills: getSkills('html', 'css', 'js', 'ps', 'ai')
 	},
 	{
-		slug: 'graphic-designer-freelancer',
+		slug: 'graphic-designer@freelancer',
 		name: 'Graphic Design Freelancer',
 		company: 'Self-employed',
 		color: 'white',
@@ -90,12 +101,12 @@ const MY_EXPERIENCES: Array<Experience> = [
 		skills: getSkills('ps', 'ae', 'ai', 'pp')
 	},
 	{
-		slug: 'intern-brain-academy',
+		slug: 'intern@brain-academy',
 		name: 'Intern',
 		company: 'Brain Academy',
 		color: 'white',
 		links: [],
-		logo: 'https://media.licdn.com/dms/image/C4D0BAQHU3ZNYgifKTQ/company-logo_200_200/0/1581467754634?e=1703721600&v=beta&t=zfuk7up_UjKDLgoXCYjxfGFhHv7C4rI4WM7GSeinflQ',
+		logo: Assets.BrainAcademy,
 		description:
 			'We developed the prototype of "SMARTchair" which is an EEG controlled wheelchair. Using our skills was not enough, so it was imminent for us to learn and get used to many other programming languages, software and even new operating systems. The project was defended the 19th of July 2020 and got "Very Good" as honor.',
 		shortDescription:
