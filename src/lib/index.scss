@@ -159,6 +159,9 @@ body {
 	--code-interpolation: var(--code-keyword);
 	--code-class-name: var(--secondary-text);
 
+	font-family: Roboto Mono;
+	font-size: 14px;
+
 	color: var(--tertiary-text);
 	overflow-y: auto !important;
 
@@ -230,7 +233,7 @@ body {
 	}
 
 	& h1 {
-		font-size: 2.25em;
+		font-size: 2.1em;
 	}
 
 	& p {

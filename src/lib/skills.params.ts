@@ -1,24 +1,24 @@
 import Assets from './data/assets';
 import type { Skill } from './types';
 
-import js_md from '$lib/md/js.md?raw';
-import ts_md from '$lib/md/ts.md?raw';
-import dart_md from '$lib/md/dart.md?raw';
-import kt_md from '$lib/md/kt.md?raw';
-import go_md from '$lib/md/go.md?raw';
-import java_md from '$lib/md/java.md?raw';
-import csharp_md from '$lib/md/csharp.md?raw';
-import py_md from '$lib/md/py.md?raw';
-import react_md from '$lib/md/react.md?raw';
-import svelte_md from '$lib/md/svelte.md?raw';
-import vue_md from '$lib/md/vue.md?raw';
-import nuxt_md from '$lib/md/nuxt.md?raw';
-import electron_md from '$lib/md/electron.md?raw';
-import flutter_md from '$lib/md/flutter.md?raw';
-import angular_md from '$lib/md/angular.md?raw';
-import xamarin_md from '$lib/md/xamarin.md?raw';
-import node_md from '$lib/md/node.md?raw';
-import deno_md from '$lib/md/deno.md?raw';
+import js_md from '$lib/md/skills/js.md?raw';
+import ts_md from '$lib/md/skills/ts.md?raw';
+import dart_md from '$lib/md/skills/dart.md?raw';
+import kt_md from '$lib/md/skills/kt.md?raw';
+import go_md from '$lib/md/skills/go.md?raw';
+import java_md from '$lib/md/skills/java.md?raw';
+import csharp_md from '$lib/md/skills/csharp.md?raw';
+import py_md from '$lib/md/skills/py.md?raw';
+import react_md from '$lib/md/skills/react.md?raw';
+import svelte_md from '$lib/md/skills/svelte.md?raw';
+import vue_md from '$lib/md/skills/vue.md?raw';
+import nuxt_md from '$lib/md/skills/nuxt.md?raw';
+import electron_md from '$lib/md/skills/electron.md?raw';
+import flutter_md from '$lib/md/skills/flutter.md?raw';
+import angular_md from '$lib/md/skills/angular.md?raw';
+import xamarin_md from '$lib/md/skills/xamarin.md?raw';
+import node_md from '$lib/md/skills/node.md?raw';
+import deno_md from '$lib/md/skills/deno.md?raw';
 
 const s = (skill: Skill) => skill;
 

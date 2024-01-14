@@ -1,12 +1,20 @@
 import Assets from './data/assets';
 import { getSkills } from './skills.params';
 import type { Project } from './types';
+import annotator_md from '$lib/md/projects/annotator.md?raw';
+import annotator_sc_in_progress from '$lib/screenshots/annotator/annotating-in-progress.png';
+import annotator_sc_annotating from '$lib/screenshots/annotator/annotating.png';
+import annotator_sc_dashboard from '$lib/screenshots/annotator/dashboard.png';
+import annotator_sc_label_creation from '$lib/screenshots/annotator/label-creation.png';
+import annotator_sc_sign_in from '$lib/screenshots/annotator/sign-in.png';
+import annotator_sc_sign_up from '$lib/screenshots/annotator/sign-up.png';
+import annotator_sc_welcome from '$lib/screenshots/annotator/welcome.png';
 
 const MY_PROJECTS: Array<Project> = [
 	{
 		slug: 'annotator',
 		color: '#c82829',
-		description: 'A basic annotation tools for documents.',
+		description: annotator_md,
 		shortDescription: 'A basic annotation tools for documents',
 		links: [{ to: 'https://github.com/RiadhAdrani/annotator', label: 'GitHub' }],
 		logo: Assets.Unknown,
@@ -25,7 +33,16 @@ const MY_PROJECTS: Array<Project> = [
 			'unocss',
 			'docker'
 		),
-		type: 'Desktop App'
+		type: 'Desktop App',
+		screenshots: [
+			{ label: 'Welcome', src: annotator_sc_welcome },
+			{ label: 'Sign Up', src: annotator_sc_sign_up },
+			{ label: 'Sign In', src: annotator_sc_sign_in },
+			{ label: 'Dashboard', src: annotator_sc_dashboard },
+			{ label: 'Annotating', src: annotator_sc_annotating },
+			{ label: 'Annotation in progress', src: annotator_sc_in_progress },
+			{ label: 'Label creation', src: annotator_sc_label_creation }
+		]
 	},
 	{
 		slug: 'docuniser',
