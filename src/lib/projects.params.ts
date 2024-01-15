@@ -1,6 +1,8 @@
 import Assets from './data/assets';
 import { getSkills } from './skills.params';
 import type { Project } from './types';
+
+// annotator
 import annotator_md from '$lib/md/projects/annotator.md?raw';
 import annotator_sc_in_progress from '$lib/screenshots/annotator/annotating-in-progress.png';
 import annotator_sc_annotating from '$lib/screenshots/annotator/annotating.png';
@@ -9,6 +11,20 @@ import annotator_sc_label_creation from '$lib/screenshots/annotator/label-creati
 import annotator_sc_sign_in from '$lib/screenshots/annotator/sign-in.png';
 import annotator_sc_sign_up from '$lib/screenshots/annotator/sign-up.png';
 import annotator_sc_welcome from '$lib/screenshots/annotator/welcome.png';
+
+// docuniser
+import docuniser_md from '$lib/md/projects/docuniser.md?raw';
+import docuniser_about from '$lib/screenshots/docuniser/about.png';
+import docuniser_create_doc from '$lib/screenshots/docuniser/create-doc.png';
+import docuniser_dark_mode from '$lib/screenshots/docuniser/dark-mode.png';
+import docuniser_checklist from '$lib/screenshots/docuniser/doc-checklist.png';
+import docuniser_subdocs from '$lib/screenshots/docuniser/doc-sub-doc.png';
+import docuniser_doc from '$lib/screenshots/docuniser/doc.png';
+import docuniser_docs_grid from '$lib/screenshots/docuniser/docs-detailed-grid.png';
+import docuniser_docs_grid_min from '$lib/screenshots/docuniser/docs-min-grid.png';
+import docuniser_docs_list from '$lib/screenshots/docuniser/docs-list.png';
+import docuniser_docs_sort from '$lib/screenshots/docuniser/docs-sort-options.png';
+import docuniser_home from '$lib/screenshots/docuniser/home.png';
 
 const MY_PROJECTS: Array<Project> = [
 	{
@@ -47,8 +63,7 @@ const MY_PROJECTS: Array<Project> = [
 	{
 		slug: 'docuniser',
 		color: '#747bff',
-		description:
-			'A simple desktop application that allow user to create and manage documents locally.',
+		description: docuniser_md,
 		shortDescription:
 			'A simple desktop application that allow user to create and manage documents locally.',
 		links: [{ to: 'https://github.com/RiadhAdrani/docuniser', label: 'GitHub' }],
@@ -59,7 +74,20 @@ const MY_PROJECTS: Array<Project> = [
 			to: new Date(2023, 10, 0)
 		},
 		skills: getSkills('ts', 'reactjs', 'node', 'vite', 'electron', 'unocss', 'docker'),
-		type: 'Desktop App'
+		type: 'Desktop App',
+		screenshots: [
+			{ label: 'Home page', src: docuniser_home },
+			{ label: 'About modal', src: docuniser_about },
+			{ label: 'Docs grid display', src: docuniser_docs_grid },
+			{ label: 'Docs compact grid display', src: docuniser_docs_grid_min },
+			{ label: 'Docs list display', src: docuniser_docs_list },
+			{ label: 'Docs sorting options', src: docuniser_docs_sort },
+			{ label: 'Document creation', src: docuniser_create_doc },
+			{ label: 'Document page', src: docuniser_doc },
+			{ label: 'Document check list', src: docuniser_checklist },
+			{ label: 'Document sub docs', src: docuniser_subdocs },
+			{ label: 'Dark Mode', src: docuniser_dark_mode }
+		]
 	},
 	{
 		slug: 'govid',
