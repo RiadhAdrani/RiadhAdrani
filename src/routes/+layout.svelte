@@ -5,6 +5,9 @@
 	import { onHydrated, theme } from '$lib/stores/theme';
 	import { onMount } from 'svelte';
 
+	// ? moved to +layout.server.ts : will be deleted when we make sure that everything is alright
+	// export const prerender = true;
+
 	onMount(() => onHydrated());
 </script>
 
