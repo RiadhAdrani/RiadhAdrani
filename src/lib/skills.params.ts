@@ -10,6 +10,7 @@ import java_md from '$lib/md/skills/java.md?raw';
 import csharp_md from '$lib/md/skills/csharp.md?raw';
 import py_md from '$lib/md/skills/py.md?raw';
 import react_md from '$lib/md/skills/react.md?raw';
+import remix_md from '$lib/md/skills/remix.md?raw';
 import svelte_md from '$lib/md/skills/svelte.md?raw';
 import vue_md from '$lib/md/skills/vue.md?raw';
 import nuxt_md from '$lib/md/skills/nuxt.md?raw';
@@ -75,6 +76,7 @@ const MY_SKILLS = [
 		logo: Assets.ReactJs,
 		name: 'React Js'
 	}),
+	s({ slug: 'remix', color: 'white', description: remix_md, logo: Assets.Remix, name: 'Remix' }),
 	s({
 		slug: 'svelte',
 		color: 'orange',
@@ -169,6 +171,15 @@ const MY_SKILLS = [
 		description: '',
 		logo: Assets.Redis,
 		name: 'Redis'
+	}),
+
+	// ORMs
+	s({
+		slug: 'prisma',
+		color: 'darkcyan',
+		description: '',
+		logo: Assets.Prisma,
+		name: 'Prisma'
 	}),
 
 	// DEVOPS

@@ -36,7 +36,8 @@ const MY_PROJECTS: Array<Project> = [
 		logo: Assets.Unknown,
 		name: 'Annotator',
 		period: {
-			from: new Date(2023, 10, 3)
+			from: new Date(2023, 10, 3),
+			to: new Date(2024, 0, 1)
 		},
 		skills: getSkills(
 			'ts',
@@ -134,7 +135,7 @@ const MY_PROJECTS: Array<Project> = [
 				label: 'Stackblitz'
 			}
 		],
-		logo: 'https://riadhadrani.github.io/ruvy/assets/dark-5f671e8e.svg',
+		logo: Assets.Ruvy,
 		name: 'Ruvy',
 		period: {
 			from: new Date(2023, 2, 1)
