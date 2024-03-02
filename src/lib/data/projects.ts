@@ -1,6 +1,7 @@
-import Assets from './data/assets';
-import { getSkills } from './skills.params';
-import type { Project } from './types';
+import type { Project } from '$lib/types';
+
+import Assets from './assets';
+import { getSkills } from './skills';
 
 // annotator
 import annotator_md from '$lib/md/projects/annotator.md?raw';
@@ -26,7 +27,7 @@ import docuniser_docs_list from '$lib/screenshots/docuniser/docs-list.png';
 import docuniser_docs_sort from '$lib/screenshots/docuniser/docs-sort-options.png';
 import docuniser_home from '$lib/screenshots/docuniser/home.png';
 
-const MY_PROJECTS: Array<Project> = [
+export const items: Array<Project> = [
 	{
 		slug: 'annotator',
 		color: '#c82829',
@@ -163,7 +164,7 @@ const MY_PROJECTS: Array<Project> = [
 		slug: 'werewolves-dart',
 		color: '#fbb03b',
 		name: 'Werewolves',
-		logo: 'https://www.loups-garous-en-ligne.com/jeu/assets/images/miniatures/carte2_120_120.png',
+		logo: Assets.Werewolves,
 		description:
 			'An app to manage your game of Loup garous de thiercelieu also known as The Werewolves of Millers Hollow.',
 		shortDescription:
@@ -292,7 +293,7 @@ const MY_PROJECTS: Array<Project> = [
 		slug: 'werewolves-kt',
 		name: 'Werewolves',
 		type: 'Android App',
-		logo: 'https://www.loups-garous-en-ligne.com/jeu/assets/images/miniatures/carte2_120_120.png',
+		logo: Assets.Werewolves,
 		color: '#fbb03b',
 		period: { from: new Date(2021, 0, 1), to: new Date(2021, 5, 10) },
 		links: [
@@ -324,4 +325,4 @@ const MY_PROJECTS: Array<Project> = [
 	}
 ];
 
-export default MY_PROJECTS;
+export const title = 'Projects';
