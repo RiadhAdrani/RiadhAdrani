@@ -1,4 +1,4 @@
-import{A as t}from"./UIcon.11d213e5.js";import{g as e}from"./skills.ad19b34e.js";const o=`# Annotator
+import{A as t}from"./UIcon.97021a5c.js";import{g as e}from"./skills.a213909d.js";const o=`# Annotator
 
 Annotator is a basic text annotation tool written with \`Rust\` and \`Typescript\`.
 
