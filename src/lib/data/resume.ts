@@ -1,3 +1,9 @@
-export const data = '';
+import { href } from '$lib/utils';
 
-export const title = 'Resumé';
+const title = 'Resumé';
+
+const resume = href('/pdf/resume.pdf');
+
+const ResumeData = { title, resume };
+
+export default ResumeData;

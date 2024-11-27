@@ -1,34 +1,33 @@
-import type { Project } from '$lib/types';
-
 import Assets from './assets';
 import { getSkills } from './skills';
+import type { Project } from './types';
 
 // annotator
-import annotator_md from '$lib/md/projects/annotator.md?raw';
-import annotator_sc_in_progress from '$lib/screenshots/annotator/annotating-in-progress.png';
-import annotator_sc_annotating from '$lib/screenshots/annotator/annotating.png';
-import annotator_sc_dashboard from '$lib/screenshots/annotator/dashboard.png';
-import annotator_sc_label_creation from '$lib/screenshots/annotator/label-creation.png';
-import annotator_sc_sign_in from '$lib/screenshots/annotator/sign-in.png';
-import annotator_sc_sign_up from '$lib/screenshots/annotator/sign-up.png';
-import annotator_sc_welcome from '$lib/screenshots/annotator/welcome.png';
+import annotator_md from '$lib/data/md/projects/annotator.md?raw';
+import annotator_sc_in_progress from '$lib/data/screenshots/annotator/annotating-in-progress.png';
+import annotator_sc_annotating from '$lib/data/screenshots/annotator/annotating.png';
+import annotator_sc_dashboard from '$lib/data/screenshots/annotator/dashboard.png';
+import annotator_sc_label_creation from '$lib/data/screenshots/annotator/label-creation.png';
+import annotator_sc_sign_in from '$lib/data/screenshots/annotator/sign-in.png';
+import annotator_sc_sign_up from '$lib/data/screenshots/annotator/sign-up.png';
+import annotator_sc_welcome from '$lib/data/screenshots/annotator/welcome.png';
 
 // docuniser
-import docuniser_md from '$lib/md/projects/docuniser.md?raw';
-import docuniser_about from '$lib/screenshots/docuniser/about.png';
-import docuniser_create_doc from '$lib/screenshots/docuniser/create-doc.png';
-import docuniser_dark_mode from '$lib/screenshots/docuniser/dark-mode.png';
-import docuniser_checklist from '$lib/screenshots/docuniser/doc-checklist.png';
-import docuniser_subdocs from '$lib/screenshots/docuniser/doc-sub-doc.png';
-import docuniser_doc from '$lib/screenshots/docuniser/doc.png';
-import docuniser_docs_grid from '$lib/screenshots/docuniser/docs-detailed-grid.png';
-import docuniser_docs_grid_min from '$lib/screenshots/docuniser/docs-min-grid.png';
-import docuniser_docs_list from '$lib/screenshots/docuniser/docs-list.png';
-import docuniser_docs_sort from '$lib/screenshots/docuniser/docs-sort-options.png';
-import docuniser_home from '$lib/screenshots/docuniser/home.png';
+import docuniser_md from '$lib/data/md/projects/docuniser.md?raw';
+import docuniser_about from '$lib/data/screenshots/docuniser/about.png';
+import docuniser_create_doc from '$lib/data/screenshots/docuniser/create-doc.png';
+import docuniser_dark_mode from '$lib/data/screenshots/docuniser/dark-mode.png';
+import docuniser_checklist from '$lib/data/screenshots/docuniser/doc-checklist.png';
+import docuniser_subdocs from '$lib/data/screenshots/docuniser/doc-sub-doc.png';
+import docuniser_doc from '$lib/data/screenshots/docuniser/doc.png';
+import docuniser_docs_grid from '$lib/data/screenshots/docuniser/docs-detailed-grid.png';
+import docuniser_docs_grid_min from '$lib/data/screenshots/docuniser/docs-min-grid.png';
+import docuniser_docs_list from '$lib/data/screenshots/docuniser/docs-list.png';
+import docuniser_docs_sort from '$lib/data/screenshots/docuniser/docs-sort-options.png';
+import docuniser_home from '$lib/data/screenshots/docuniser/home.png';
 
-import domer_md from '$lib/md/projects/domer.md?raw';
-import dom_router_md from '$lib/md/projects/dom-router.md?raw';
+import domer_md from '$lib/data/md/projects/domer.md?raw';
+import dom_router_md from '$lib/data/md/projects/dom-router.md?raw';
 
 export const items: Array<Project> = [
 	{
@@ -223,7 +222,7 @@ export const items: Array<Project> = [
 		slug: 'recursive',
 		color: '#cf2026',
 		name: 'Recursive',
-		logo: 'https://raw.githubusercontent.com/RiadhAdrani/recursive/master/logo.png',
+		logo: Assets.Unknown,
 		description:
 			'Recursive is an ongoing project that allow developers to build a functional, component-based, Javascript only, beautiful and interactive Web applications.',
 		shortDescription:
@@ -358,4 +357,8 @@ export const items: Array<Project> = [
 	}
 ];
 
-export const title = 'Projects';
+const title = 'Projects';
+
+const ProjectsData = { title, items };
+
+export default ProjectsData;

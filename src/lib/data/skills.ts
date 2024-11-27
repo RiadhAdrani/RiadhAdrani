@@ -1,27 +1,64 @@
+import type { Skill, SkillCategory } from './types';
+import type { StringWithAutoComplete } from '@riadh-adrani/utils';
+import { omit } from '@riadh-adrani/utils';
 import Assets from './assets';
-import type { Skill, SkillCategory } from '../types';
 
-import js_md from '$lib/md/skills/js.md?raw';
-import ts_md from '$lib/md/skills/ts.md?raw';
-import dart_md from '$lib/md/skills/dart.md?raw';
-import kt_md from '$lib/md/skills/kt.md?raw';
-import go_md from '$lib/md/skills/go.md?raw';
-import java_md from '$lib/md/skills/java.md?raw';
-import csharp_md from '$lib/md/skills/csharp.md?raw';
-import py_md from '$lib/md/skills/py.md?raw';
-import react_md from '$lib/md/skills/react.md?raw';
-import remix_md from '$lib/md/skills/remix.md?raw';
-import svelte_md from '$lib/md/skills/svelte.md?raw';
-import vue_md from '$lib/md/skills/vue.md?raw';
-import nuxt_md from '$lib/md/skills/nuxt.md?raw';
-import electron_md from '$lib/md/skills/electron.md?raw';
-import flutter_md from '$lib/md/skills/flutter.md?raw';
-import angular_md from '$lib/md/skills/angular.md?raw';
-import xamarin_md from '$lib/md/skills/xamarin.md?raw';
-import node_md from '$lib/md/skills/node.md?raw';
-import deno_md from '$lib/md/skills/deno.md?raw';
+import js_md from '$lib/data/md/skills/js.md?raw';
+import ts_md from '$lib/data/md/skills/ts.md?raw';
+import dart_md from '$lib/data/md/skills/dart.md?raw';
+import kt_md from '$lib/data/md/skills/kt.md?raw';
+import go_md from '$lib/data/md/skills/go.md?raw';
+import java_md from '$lib/data/md/skills/java.md?raw';
+import csharp_md from '$lib/data/md/skills/csharp.md?raw';
+import py_md from '$lib/data/md/skills/py.md?raw';
+import react_md from '$lib/data/md/skills/react.md?raw';
+import remix_md from '$lib/data/md/skills/remix.md?raw';
+import svelte_md from '$lib/data/md/skills/svelte.md?raw';
+import vue_md from '$lib/data/md/skills/vue.md?raw';
+import nuxt_md from '$lib/data/md/skills/nuxt.md?raw';
+import electron_md from '$lib/data/md/skills/electron.md?raw';
+import flutter_md from '$lib/data/md/skills/flutter.md?raw';
+import angular_md from '$lib/data/md/skills/angular.md?raw';
+import xamarin_md from '$lib/data/md/skills/xamarin.md?raw';
+import node_md from '$lib/data/md/skills/node.md?raw';
+import deno_md from '$lib/data/md/skills/deno.md?raw';
 
-import { omit, type StringWithAutoComplete } from '@riadh-adrani/utils';
+const defineSkillCategory = <S extends string>(data: SkillCategory<S>): SkillCategory<S> => data;
+
+const categories = [
+	defineSkillCategory({ name: 'Programming Languages', slug: 'pro-lang' }),
+	defineSkillCategory({ name: 'Frameworks', slug: 'framework' }),
+	defineSkillCategory({ name: 'Libraries', slug: 'library' }),
+	defineSkillCategory({ name: 'Langauges', slug: 'lang' }),
+	defineSkillCategory({ name: 'Databases', slug: 'db' }),
+	defineSkillCategory({ name: 'ORMs', slug: 'orm' }),
+	defineSkillCategory({ name: 'DevOps', slug: 'devops' }),
+	defineSkillCategory({ name: 'Testing', slug: 'test' }),
+	defineSkillCategory({ name: 'Dev Tools', slug: 'devtools' }),
+	defineSkillCategory({ name: 'Markup & Style', slug: 'markup-style' }),
+	defineSkillCategory({ name: 'Design', slug: 'design' }),
+	defineSkillCategory({ name: 'Soft Skills', slug: 'soft' })
+] as const;
+
+const defineSkill = <S extends string>(
+	skill: Omit<Skill<S>, 'category'> & {
+		category?: StringWithAutoComplete<(typeof categories)[number]['slug']>;
+	}
+): Skill<S> => {
+	const out: Skill<S> = omit(skill, 'category');
+
+	if (skill.category) {
+		out.category = categories.find((it) => it.slug === skill.category);
+	}
+
+	return out;
+};
+
+export const getSkills = (
+	...slugs: Array<StringWithAutoComplete<(typeof items)[number]['slug']>>
+): Array<Skill> => {
+	return items.filter((it) => (slugs.length === 0 ? true : slugs.includes(it.slug)));
+};
 
 export const groupByCategory = (
 	query: string
@@ -58,40 +95,7 @@ export const groupByCategory = (
 	return out;
 };
 
-const defineSkillCategory = <S extends string>(data: SkillCategory<S>): SkillCategory<S> => data;
-
-const categories = [
-	defineSkillCategory({ name: 'Programming Languages', slug: 'pro-lang' }),
-	defineSkillCategory({ name: 'Frameworks', slug: 'framework' }),
-	defineSkillCategory({ name: 'Libraries', slug: 'library' }),
-	defineSkillCategory({ name: 'Langauges', slug: 'lang' }),
-	defineSkillCategory({ name: 'Databases', slug: 'db' }),
-	defineSkillCategory({ name: 'ORMs', slug: 'orm' }),
-	defineSkillCategory({ name: 'DevOps', slug: 'devops' }),
-	defineSkillCategory({ name: 'Testing', slug: 'test' }),
-	defineSkillCategory({ name: 'Dev Tools', slug: 'devtools' }),
-	defineSkillCategory({ name: 'Markup & Style', slug: 'markup-style' }),
-	defineSkillCategory({ name: 'Design', slug: 'design' }),
-	defineSkillCategory({ name: 'Soft Skills', slug: 'soft' }),
-	defineSkillCategory({ name: 'Environments & Runtimes', slug: 'env' })
-] as const;
-
-const defineSkill = <S extends string>(
-	skill: Omit<Skill<S>, 'category'> & {
-		category?: StringWithAutoComplete<(typeof categories)[number]['slug']>;
-	}
-): Skill<S> => {
-	const out: Skill<S> = omit(skill, 'category');
-
-	if (skill.category) {
-		out.category = categories.find((it) => it.slug === skill.category);
-	}
-
-	return out;
-};
-
-export type ArrayElementType<ArrayType extends readonly unknown[]> =
-	ArrayType extends readonly (infer ElementType)[] ? ElementType : never;
+const title = 'Skills';
 
 export const items = [
 	// LANGUAGES
@@ -184,6 +188,14 @@ export const items = [
 		logo: Assets.Remix,
 		category: 'framework',
 		name: 'Remix'
+	}),
+	defineSkill({
+		slug: 'nextjs',
+		color: 'white',
+		description: '',
+		logo: Assets.NextJs,
+		category: 'framework',
+		name: 'Next.js'
 	}),
 	defineSkill({
 		slug: 'svelte',
@@ -435,7 +447,7 @@ export const items = [
 		slug: 'unocss',
 		color: 'gray',
 		description: '',
-		logo: 'https://unocss.dev/logo.svg',
+		logo: Assets.Unocss,
 		name: 'UnoCSS',
 		category: 'markup-style'
 	}),
@@ -492,8 +504,9 @@ export const items = [
 	})
 ];
 
-export const title = 'Skills';
+const SkillsData = {
+	title,
+	items
+};
 
-export const getSkills = (
-	...slugs: Array<StringWithAutoComplete<(typeof items)[number]['slug']>>
-): Array<Skill> => items.filter((it) => slugs.includes(it.slug));
+export default SkillsData;

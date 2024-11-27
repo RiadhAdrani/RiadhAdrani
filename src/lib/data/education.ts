@@ -1,5 +1,7 @@
 import Assets from './assets';
-import type { Education } from '../types';
+import type { Education } from './types';
+
+const title = 'Education';
 
 export const items: Array<Education> = [
 	{
@@ -16,4 +18,6 @@ export const items: Array<Education> = [
 	}
 ];
 
-export const title = 'Education';
+const EducationData = { title, items };
+
+export default EducationData;

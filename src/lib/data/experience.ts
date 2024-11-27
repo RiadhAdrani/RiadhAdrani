@@ -1,8 +1,43 @@
 import Assets from './assets';
 import { getSkills } from './skills';
-import { ContractType, type Experience } from '../types';
+import { ContractType, type Experience } from './types';
+
+const title = 'Experience';
 
 export const items: Array<Experience> = [
+	{
+		slug: 'founder@riamenix',
+		name: 'Founder',
+		company: 'Riamenix',
+		color: 'darkblue',
+		contract: ContractType.FullTime,
+		description: '',
+		shortDescription: '',
+		type: 'Software Development',
+		location: 'Remote Tunisia',
+		links: [],
+		logo: Assets.Riamenix,
+		period: { from: new Date(2024, 7, 1) },
+		skills: getSkills(
+			'ts',
+			'angular',
+			'css',
+			'docker',
+			'electron',
+			'firebase',
+			'honojs',
+			'node',
+			'postgresql',
+			'reactjs',
+			'vite',
+			'vitest',
+			'unocss',
+			'tailwind',
+			'remix',
+			'nextjs'
+		),
+		screenshots: []
+	},
 	{
 		slug: 'dev@cihub',
 		name: 'Software Developer',
@@ -141,4 +176,6 @@ export const items: Array<Experience> = [
 	}
 ];
 
-export const title = 'Experience';
+const ExperienceData = { title, items };
+
+export default ExperienceData;
